@@ -1,0 +1,275 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --danger-color: #f72585;
+    --warning-color: #f8961e;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    padding-top: 56px; /* For fixed navbar */
+}
+
+/* Navigation Bar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 56px; /* Below navbar */
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 20px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background: linear-gradient(135deg, #2b2d42 0%, #1a1a2e 100%);
+    color: white;
+    width: 280px;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    margin: 2px 8px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link i {
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.sidebar .nav-link.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 16px;
+    margin-top: 24px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 280px;
+    padding-top: 20px;
+}
+
+/* Cards */
+.bookmark-card {
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.bookmark-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-card .card-body {
+    padding: 1.25rem;
+}
+
+.bookmark-card .card-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.bookmark-card .card-text {
+    font-size: 0.85rem;
+}
+
+.tag-badge {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: var(--accent-color);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.tag-badge:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.favicon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+/* Empty State */
+#empty-state {
+    display: none;
+    padding: 60px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#empty-state i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+#empty-state h3 {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+#empty-state p {
+    color: #6c757d;
+}
+
+/* Form Styles */
+#add-bookmark-form .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#add-bookmark-form .card-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 12px 20px;
+}
+
+#add-bookmark-form .card-header h5 {
+    font-weight: 600;
+    margin: 0;
+}
+
+#add-bookmark-form .form-control {
+    border-radius: 6px;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+}
+
+#add-bookmark-form .form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+/* Modal Styles */
+#bookmarkModal .modal-header {
+    border-radius: 10px 10px 0 0;
+}
+
+/* Search Bar */
+#search-input, #mobile-search-input {
+    border-radius: 20px;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+}
+
+#search-button, #mobile-search-button {
+    border-radius: 20px;
+    padding: 0 15px;
+    border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 240px;
+    }
+    .main-content {
+        margin-left: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none !important;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    #search-input {
+        display: none;
+    }
+    #search-button {
+        display: none;
+    }
+    #mobile-search-input {
+        display: block !important;
+    }
+    #mobile-search-button {
+        display: block !important;
+    }
+}
+
+@media (min-width: 769px) {
+    #mobile-search-input {
+        display: none !important;
+    }
+    #mobile-search-button {
+        display: none !important;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bookmark-card {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Tag list in sidebar */
+#tag-list .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    margin: 2px 8px;
+}
+
+#tag-list .nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#tag-list .nav-link i {
+    color: var(--accent-color);
+}
